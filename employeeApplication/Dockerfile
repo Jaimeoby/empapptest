@@ -12,10 +12,9 @@ VOLUME /tmp
 EXPOSE 9001
 
 # application jar 
-ARG JAR_FILE=target/employeeApplication-0.0.1-SNAPSHOT.jar
 
 # add this jar to the container
-ADD ${JAR_FILE} employeeApplication.jar
+ADD target/employeeApplication-0.0.1-SNAPSHOT.jar employeeApplication.jar
 
 #Run the jar file
 ENTRYPOINT [ "java","-Djava.security.egd=file:/dev/./urandom","-jar","/employeeApplication.jar" ]
